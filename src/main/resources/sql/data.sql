@@ -1,0 +1,16 @@
+INSERT INTO rooms("name", room_number, bed_info)
+VALUES  ('Piccadilly', 'P1', '1Q'),
+        ('Piccadilly', 'P2', '1Q'),
+        ('Piccadilly', 'P3', '1Q'),
+        ('Piccadilly', 'P4', '2D'),
+        ('Piccadilly', 'P5', '2D'),
+        ('Piccadilly', 'P6', '2D'),
+        ('Camridge', 'C1', '1K'),
+        ('Camridge', 'C2', '1K'),
+        ('Camridge', 'C3', '1K'),
+        ('Westminster', 'W1', '1K'),
+        ('Westminster', 'W2', '1K'),
+        ('Westminster', 'W3', '1K'),
+        ('Westminster', 'W4', '1K'),
+        ('Westminster', 'W5', '2D'),
+        ('Westminster', 'W6', '2D');
