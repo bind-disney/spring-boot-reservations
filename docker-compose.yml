@@ -1,0 +1,42 @@
+version: "3.7"
+
+services:
+  app:
+    image: gradle:jdk11
+    container_name: reservations_app
+    working_dir: /app
+    user: gradle
+    command:
+      - sleep
+      - infinity
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
+      SPRING_DATASOURCE_USERNAME: $DATABASE_USER
+      SPRING_DATASOURCE_PASSWORD: $DATABASE_PASSWORD
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "127.0.0.1:20080:8080"
+    volumes:
+      - ".gradle:/home/gradle/.gradle"
+      - "./:/app"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12-alpine
+    container_name: reservations_db
+    environment:
+      PGDATABASE: $DATABASE_NAME
+      POSTGRES_DB: $DATABASE_NAME
+      PGUSER: $DATABASE_USER
+      POSTGRES_USER: $DATABASE_USER
+      PGPASSWORD: $DATABASE_PASSWORD
+      POSTGRES_PASSWORD: $DATABASE_PASSWORD
+    ports:
+      - "127.0.0.1:16432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    driver: local
