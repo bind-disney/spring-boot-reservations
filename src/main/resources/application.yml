@@ -6,6 +6,6 @@ spring:
     open-in-view: false
     generate-ddl: false
   datasource:
-    initialization-mode: always
+    initialization-mode: never
     schema: "classpath:sql/schema.sql"
     data: "classpath:sql/data.sql"
