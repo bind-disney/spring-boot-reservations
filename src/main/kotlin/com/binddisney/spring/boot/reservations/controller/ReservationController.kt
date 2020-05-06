@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
-@RequestMapping(value = ["/reservations"], produces = [MediaType.TEXT_HTML_VALUE])
+@RequestMapping(path = ["/reservations"], produces = [MediaType.TEXT_HTML_VALUE])
 class ReservationController(private val reservationService: ReservationService, private val dateParser: DateParser) {
 
     @GetMapping
