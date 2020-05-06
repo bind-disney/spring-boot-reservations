@@ -26,11 +26,16 @@ idea {
 	}
 }
 
+extra["bootstrapVersion"] = "4.4.1-1"
+
 dependencies {
+	val bootstrapVersion by project.extra.properties
+
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.webjars:bootstrap:$bootstrapVersion")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
