@@ -7,6 +7,7 @@ plugins {
 	kotlin("jvm") version kotlinVersion
 	kotlin("plugin.spring") version kotlinVersion
 	kotlin("plugin.jpa") version kotlinVersion
+	id("idea")
 }
 
 group = "com.binddisney.spring.boot"
@@ -16,6 +17,13 @@ java.targetCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
+}
+
+idea {
+	module {
+		inheritOutputDirs = false
+		outputDir = file("$buildDir/classes/kotlin/main")
+	}
 }
 
 dependencies {
